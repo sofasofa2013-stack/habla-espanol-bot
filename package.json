@@ -1,1 +1,17 @@
-
+{
+  "name": "habla-espanol-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for learning Spanish A1-C1",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "@anthropic-ai/sdk": "^0.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
