@@ -77,7 +77,7 @@ Se llama — он/она называется
 😄 Запомни: «Me llamo» буквально «я называю себя». Какая самооценка!`,
         exercises: [
           { q: "🤔 Как сказать «Добрый день»?", options: ["Buenos días", "Buenas tardes", "Buenas noches", "Hola"], correct: 1, explain: "Tardes = вторая половина дня. Días = утро. Не путай — иначе поздороваешься с ночью в полдень 😂" },
-          { q: "👩 Женщина говорит «Я очень рада». Что скажет?", options: ["Encantado", "Mucho gusto", "Encantada", "Me llamo"], correct: 2, explain: "Encantad*A* — женский род! Испанский честен насчёт пола 😏" },
+          { q: "👩 Женщина говорит «Я очень рада». Что скажет?", options: ["Encantado", "Mucho gusto", "Encantada", "Me llamo"], correct: 2, explain: "EncantadA — женский род! Испанский честен насчёт пола 😏" },
           { q: "📝 Заполни: «_____ llamo Sofia»", options: ["Te", "Me", "Se", "Le"], correct: 1, explain: "Me llamo = меня зовут. Я называю СЕБЯ Sofíей! 💁‍♀️" },
         ],
         test: [
@@ -103,13 +103,13 @@ Se llama — он/она называется
 🇦🇷 Argentina → argentino/argentina
 
 *Глагол SER (быть):*
-Yo *soy* — Я
-Tú *eres* — Ты
-Él/Ella *es* — Он/Она
-Nosotros *somos* — Мы
-Ellos *son* — Они
+Yo soy — Я
+Tú eres — Ты
+Él/Ella es — Он/Она
+Nosotros somos — Мы
+Ellos son — Они
 
-⚠️ *Важно:* национальности пишутся с *маленькой* буквы!
+⚠️ *Важно:* национальности пишутся с маленькой буквы!
 Soy ruso — не Ruso. Испанский скромнее нас 😄`,
         exercises: [
           { q: "«Ella _____ de México»", options: ["soy", "eres", "es", "son"], correct: 2, explain: "Ella → es. Три формы: yo→soy, tú→eres, él/ella→es. Выучи — и ты уже говоришь! 🚀" },
