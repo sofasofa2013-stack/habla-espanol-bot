@@ -968,36 +968,7 @@ async function sendLessonInvoice(chatId, levelKey, topicIdx) {
   );
 }
 
-async function sendCourseInvoice(chatId) {
-  await bot.sendInvoice(
-    chatId,
-    "🎓 Весь курс Habla Español",
-    "Все уровни A1–C1, 20 тем, упражнения, тесты и Sofía 24/7! 🇪🇸🔥",
-    "full_course",
-    PAYMENT_TOKEN,
-    "EUR",
-    [{ label: "Весь курс A1–C1", amount: PRICE_COURSE }],
-    {
-      photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png",
-      need_name: false,
-      need_email: false,
-    }
-  );
-}
 
-// ─── MAIN HANDLERS ────────────────────────────────────────────
-
-bot.onText(/\/start/, async (msg) => {
-  const chatId = msg.chat.id;
-  const user = getUser(chatId);
-  const name = msg.from.first_name || "друг";
-
-  await bot.sendMessage(
-    chatId,
-    `¡Hola, ${name}! 🇪🇸🎉\n\nДобро пожаловать в *Habla Español* — самый весёлый самоучитель испанского в Телеграме!\n\n😎 Здесь нет скуки, зато есть:\n• 5 уровней от A1 до C1\n• 20 тем с теорией и упражнениями\n• Тесты с разбором ошибок\n• 🤖 Репетитор Sofía — 24/7, 10 вопросов в день\n• Разбор культуры, сленга и менталитета\n\n💡 Первый урок — *БЕСПЛАТНО*!\nОстальные — 1€ за урок или 10€ за весь курс 🎓\n\n¡Vamos! 🚀 Выбирай уровень!`,
-    { parse_mode: "Markdown", ...mainMenu }
-  );
-});
 
 bot.onText(/\/help/, async (msg) => {
   const chatId = msg.chat.id;
