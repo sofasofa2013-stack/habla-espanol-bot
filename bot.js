@@ -15,7 +15,7 @@ const Anthropic = require("@anthropic-ai/sdk");
 const BOT_TOKEN = process.env.BOT_TOKEN || "YOUR_BOT_TOKEN";
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY || "YOUR_ANTHROPIC_KEY";
 // Telegram Payments token — get from @BotFather → Payments
-const PAYMENT_TOKEN = process.env.PAYMENT_TOKEN || "YOUR_PAYMENT_TOKEN";
+
 
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_KEY });
