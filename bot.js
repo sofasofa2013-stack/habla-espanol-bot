@@ -954,10 +954,11 @@ async function sendLessonInvoice(chatId, levelKey, topicIdx) {
   const topic = COURSE[levelKey].topics[topicIdx];
   await bot.sendInvoice(
     chatId,
-   async function sendCourseInvoice(chatId) {
+  async function sendLessonInvoice(chatId, levelKey, topicIdx) {
+  const topic = COURSE[levelKey].topics[topicIdx];
   await bot.sendMessage(
     chatId,
-    `🎓 *Весь курс A1–C1 — 10€*\n\nВсе 20 уроков навсегда! 🇪🇸🔥\n\n👉 https://web.tribute.tg/p/vSD\n\n📩 После оплаты напиши: @Sofia\\_morena\nПришли Telegram ID — активируем за час! ⚡`,
+    `🔒 *Урок: ${topic.title}*\n\n💳 *1€ — открыть этот урок:*\nhttps://web.tribute.tg/p/vSC\n\n🎓 *10€ — весь курс A1–C1:*\nhttps://web.tribute.tg/p/vSD\n\n📩 После оплаты напиши: @Sofia\\_morena\nПришли свой Telegram ID — активируем за час! ⚡`,
     { parse_mode: "Markdown", reply_markup: { keyboard: [["⬅️ Назад к урокам"]], resize_keyboard: true } }
   );
 }
