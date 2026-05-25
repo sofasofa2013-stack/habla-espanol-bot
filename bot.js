@@ -3,7 +3,7 @@ const Anthropic = require("@anthropic-ai/sdk");
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
-const ADMIN_ID = process.env.ADMIN_ID;
+const ADMIN_ID = 2144577313;
 
 if (!BOT_TOKEN) { console.error("❌ BOT_TOKEN не задан!"); process.exit(1); }
 if (!ANTHROPIC_KEY) { console.error("❌ ANTHROPIC_API_KEY не задан!"); process.exit(1); }
