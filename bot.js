@@ -11,8 +11,8 @@ if (!ANTHROPIC_KEY) { console.error("❌ ANTHROPIC_API_KEY не задан!"); p
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_KEY });
 
-const TRIBUTE_LESSON = "https://web.tribute.tg/p/vSC";
-const TRIBUTE_COURSE = "https://web.tribute.tg/p/vSD";
+const TRIBUTE_LESSON = "https://web.tribute.tg/p/wB5";
+const TRIBUTE_COURSE = "https://web.tribute.tg/p/wB6";
 const ADMIN_CONTACT = "@Sofia\\_morena";
 
 const users = {};
