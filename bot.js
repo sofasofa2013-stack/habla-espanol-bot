@@ -954,20 +954,13 @@ async function sendLessonInvoice(chatId, levelKey, topicIdx) {
   const topic = COURSE[levelKey].topics[topicIdx];
   await bot.sendInvoice(
     chatId,
-    `🔓 Урок: ${topic.title}`,
-    `Открой урок «${topic.title}» и учи испанский с удовольствием! 🇪🇸`,
-    `lesson_${levelKey}_${topicIdx}`,
-    PAYMENT_TOKEN,
-    "EUR",
-    [{ label: "Урок", amount: PRICE_LESSON }],
-    {
-      photo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/320px-Flag_of_Spain.svg.png",
-      need_name: false,
-      need_email: false,
-    }
+   async function sendCourseInvoice(chatId) {
+  await bot.sendMessage(
+    chatId,
+    `🎓 *Весь курс A1–C1 — 10€*\n\nВсе 20 уроков навсегда! 🇪🇸🔥\n\n👉 https://web.tribute.tg/p/vSD\n\n📩 После оплаты напиши: @Sofia\\_morena\nПришли Telegram ID — активируем за час! ⚡`,
+    { parse_mode: "Markdown", reply_markup: { keyboard: [["⬅️ Назад к урокам"]], resize_keyboard: true } }
   );
 }
-
 async function sendCourseInvoice(chatId) {
   await bot.sendInvoice(
     chatId,
