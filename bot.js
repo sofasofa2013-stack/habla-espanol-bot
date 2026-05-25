@@ -867,6 +867,7 @@ bot.onText(/\/reset/, async (msg) => {
 });
 
 bot.onText(/\/give_course (.+)/, async (msg, match) => {
+  await bot.sendMessage(msg.chat.id, `Твой ID: ${msg.from.id} | ADMIN_ID: ${ADMIN_ID}`);
   if (String(msg.from.id) !== String(ADMIN_ID)) return;
   const targetId = match[1].trim();
   getUser(targetId).fullCourse = true;
