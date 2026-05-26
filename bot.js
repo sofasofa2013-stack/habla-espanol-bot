@@ -913,7 +913,7 @@ bot.on("message", async (msg) => {
     await bot.sendMessage(chatId, "🤔 Sofía думает...");
     try {
       const response = await anthropic.messages.create({
-        model: "claude-sonnet-4-20250514",
+        model: "claude-sonnet-4-5",
         max_tokens: 400,
         system: SOFIA_PROMPT,
         messages: [{ role: "user", content: text }],
