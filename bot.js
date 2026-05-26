@@ -3,7 +3,7 @@ const Anthropic = require("@anthropic-ai/sdk");
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
-const ADMIN_ID = 2144577313;
+const ADMIN_ID = process.env.ADMIN_ID;
 
 if (!BOT_TOKEN) { console.error("❌ BOT_TOKEN не задан!"); process.exit(1); }
 if (!ANTHROPIC_KEY) { console.error("❌ ANTHROPIC_API_KEY не задан!"); process.exit(1); }
@@ -867,7 +867,6 @@ bot.onText(/\/reset/, async (msg) => {
 });
 
 bot.onText(/\/give_course (.+)/, async (msg, match) => {
-  await bot.sendMessage(msg.chat.id, `Твой ID: ${msg.from.id} | ADMIN_ID: ${ADMIN_ID}`);
   if (String(msg.from.id) !== String(ADMIN_ID)) return;
   const targetId = match[1].trim();
   getUser(targetId).fullCourse = true;
@@ -913,7 +912,7 @@ bot.on("message", async (msg) => {
     await bot.sendMessage(chatId, "🤔 Sofía думает...");
     try {
       const response = await anthropic.messages.create({
-        model: "claude-haiku-4-5",
+        model: "claude-haiku-4-5-20251001",
         max_tokens: 400,
         system: SOFIA_PROMPT,
         messages: [{ role: "user", content: text }],
@@ -1142,16 +1141,7 @@ bot.on("message", async (msg) => {
     );
     return;
   }
-if (text.startsWith("!give ")) {
-    const parts = text.split(" ");
-    const targetId = parts[1];
-    getUser(targetId).fullCourse = true;
-    await bot.sendMessage(chatId, `✅ Курс открыт для ${targetId}`);
-    try {
-      await bot.sendMessage(targetId, `🎉 *Доступ активирован!* ¡A estudiar! 📚`, { parse_mode: "Markdown", ...mainMenu });
-    } catch(e) {}
-    return;
-  }
+
   if (text === "📊 Мой прогресс") {
     const total = Object.values(COURSE).reduce((a, l) => a + l.topics.length, 0);
     const unlocked = user.fullCourse ? total : user.paid.length + 1;
