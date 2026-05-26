@@ -1142,7 +1142,16 @@ bot.on("message", async (msg) => {
     );
     return;
   }
-
+if (text.startsWith("!give ")) {
+    const parts = text.split(" ");
+    const targetId = parts[1];
+    getUser(targetId).fullCourse = true;
+    await bot.sendMessage(chatId, `✅ Курс открыт для ${targetId}`);
+    try {
+      await bot.sendMessage(targetId, `🎉 *Доступ активирован!* ¡A estudiar! 📚`, { parse_mode: "Markdown", ...mainMenu });
+    } catch(e) {}
+    return;
+  }
   if (text === "📊 Мой прогресс") {
     const total = Object.values(COURSE).reduce((a, l) => a + l.topics.length, 0);
     const unlocked = user.fullCourse ? total : user.paid.length + 1;
